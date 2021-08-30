@@ -17,7 +17,7 @@ export const preventSendCommet=(e)=>{
 
       }); 
 };
-
+// Este evento recoge el inner html, busca el elemento padre y muestra/remueve los botones. 
 export const preventSaveEmptyField = (e)=>{
   const event= e.target.innerHTML;
   const btnSave = e.target.parentElement.querySelector('.btn-save'); 
@@ -29,7 +29,7 @@ export const preventSaveEmptyField = (e)=>{
   }
 }
 
-
+// Aqui se exportan las funciones necesarias para los comentarios
 export const dateComment=(date)=>{
     const yearComment=date.getFullYear();
     const monthComment=date.getMonth() + 1;
@@ -38,7 +38,7 @@ export const dateComment=(date)=>{
     const completeDate = `${dayComment}/${monthComment}/${yearComment} a las ${hourComment}`;
     return completeDate;
 }
-
+// create comment detecta el div que es el formulario y previene que se envie la información pero utiliza esa informacion para crear el comentario.
 export const createComment = async (e)=>{
     e.preventDefault();
     const formComments=e.target;
